@@ -1,6 +1,6 @@
-package Base;
+package Base.Trabajo;
 
-public class Trabajo {
+public abstract class TrabajoBase {
 
 private int p_idTrabajo;
 private int p_CodigoCliente;
