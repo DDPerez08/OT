@@ -1,6 +1,6 @@
 package Base;
 
-public class EmpleadoBase {
+public class empleadoBase {
     private int id;
     private String Nombre;
 

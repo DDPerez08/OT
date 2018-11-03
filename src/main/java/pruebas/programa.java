@@ -1,4 +1,4 @@
-package Pruebas;
+package pruebas;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +9,9 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.stage.WindowEvent;
 
-public class Programa extends Application {
+import ventana.oTrabajoControl;
+
+public class programa extends Application {
     private Stage primaryStage;
     private BorderPane rootLayout;
     private boolean internalWindowIsOpen = false;
@@ -19,7 +21,7 @@ public class Programa extends Application {
     @Override
     public void start(Stage primaryStage){
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle(Ventana.OTrabajoControl.getTitle());
+        this.primaryStage.setTitle(oTrabajoControl.getTitle());
         this.primaryStage.setMaximized(true);
         // this.primaryStage.setFullScreen(true);
         initVentanaMaestra();
@@ -36,10 +38,10 @@ public class Programa extends Application {
     public void initVentanaMaestra() {
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(getClass().getResource(Ventana.OTrabajoControl.getPath()));
+            loader.setLocation(getClass().getResource(oTrabajoControl.getPath()));
             rootLayout = (BorderPane) loader.load();
 
-            VentanaMaestraControlador controller = loader.getController();
+            oTrabajoControl controller = loader.getController();
             controller.setMainApp(this);
 
             Scene scene = new Scene(rootLayout);
@@ -54,12 +56,13 @@ public class Programa extends Application {
     { launch(args);
 
     }
+/*
     //adaptar metodo
     public void mostrarVentanaModal(Ventanas ventana, Stage stage, Object entidad) {
 
         try {
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Programa.class.getResource(ventana.getPath()));
+            loader.setLocation(programa.class.getResource(ventana.getPath()));
             AnchorPane page = (AnchorPane) loader.load();
 
             Stage dialogStage = new Stage();
@@ -112,4 +115,5 @@ public class Programa extends Application {
             }
         }
     }
+    */
 }

@@ -1,6 +1,6 @@
 package Base;
 
-public class ClienteBase {
+public class clienteBase {
     private int p_idCliente;
     private int p_Codigo;
     private String p_Organiza;
